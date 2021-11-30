@@ -6,7 +6,7 @@
 library(lubridate)
 library(tidyverse)
 
-pasta <- '/home/usuario/Documentos/Pesquisas/TRIATLAS/arq. banco de dados/clorofila/requested_files_1_czcs/requested_files'
+pasta <- '/home/usuario/.../requested_files_1_czcs/requested_files'
 arquivos <- list.files(pasta, pattern = 'a\\.nc', full.names = TRUE)
 
 extrai_dados_do_arquivo_nc <- function(caminho_do_arquivo) {
