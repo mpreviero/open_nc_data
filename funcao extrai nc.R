@@ -19,12 +19,11 @@ extrai_dados_do_arquivo_nc <- function(caminho_do_arquivo) {
   lat <- ncvar_get(dado_nc, "lat")
   value <- ncvar_get(dado_nc, "chlor_a")
   
-  # matrix to data.frame (valor da clor_a para cada ponto lat lon)
+  # matrix para data.frame (valor da chlor_a para cada ponto lat lon)
   dimnames(value) <- list(lon = lon, lat = lat)
   dat.var <- melt(value, id = "lon", value.name = "chlor_a")
   
-  # select data from the study area taking out missing data, and grouping by
-  # rounded lat lon values
+  # seleciona a área de estudo, remove dados NA e agrupa por lat lon a cada 1°x1°
   dado_final <- dat.var %>% 
     as_tibble() %>% 
     filter(
