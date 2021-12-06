@@ -4,6 +4,8 @@
 # criação conjunta com Raul de Sá Durlo
 library(lubridate)
 library(tidyverse)
+library(ncdf4)
+library(reshape2)
 
 pasta <- '/home/usuario/.../clorofila/requested_files_1_SeaWiFS/requested_files'
 arquivos <- list.files(pasta, pattern = 'a\\.nc', full.names = TRUE)
